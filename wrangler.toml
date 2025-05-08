@@ -4,6 +4,7 @@ account_id = "" # You'll fill this in after logging in
 workers_dev = true
 route = ""
 zone_id = ""
+compatibility_date = "2024-05-08"
 
 [site]
 bucket = "./out"
@@ -12,8 +13,13 @@ entry-point = "workers-site"
 [build]
 command = "npm run build"
 upload.format = "service-worker"
+cwd = "."
 
 [env.production]
 workers_dev = false
 route = "farcaster-monad-vote-miniapp.pages.dev"
-zone_id = "" # You'll fill this in after logging in 
+zone_id = "" # You'll fill this in after logging in
+
+# Pages specific configuration
+[pages]
+pages_build_output_dir = "out" 
