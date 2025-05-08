@@ -1,0 +1,19 @@
+name = "farcaster-monad-vote-miniapp"
+type = "webpack"
+account_id = "" # You'll fill this in after logging in
+workers_dev = true
+route = ""
+zone_id = ""
+
+[site]
+bucket = "./out"
+entry-point = "workers-site"
+
+[build]
+command = "npm run build"
+upload.format = "service-worker"
+
+[env.production]
+workers_dev = false
+route = "farcaster-monad-vote-miniapp.pages.dev"
+zone_id = "" # You'll fill this in after logging in 
