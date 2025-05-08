@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Frame } from '@farcaster/frame-sdk'
+import Frame from '@farcaster/frame-sdk'
 import { frameMetadata } from './frame-metadata'
 import { ethers } from 'ethers'
 
