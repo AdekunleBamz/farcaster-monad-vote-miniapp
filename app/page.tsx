@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { createFrame } from '@farcaster/frame-sdk'
+import Frame from '@farcaster/frame-sdk'
 import { frameMetadata } from './frame-metadata'
 import { ethers } from 'ethers'
 
@@ -53,7 +53,7 @@ export default function Home() {
   const [isVoting, setIsVoting] = useState(false)
   const [walletAddress, setWalletAddress] = useState<string | null>(null)
   const [monBalance, setMonBalance] = useState<string>('0')
-  const [frame, setFrame] = useState<ReturnType<typeof createFrame> | null>(null)
+  const [frame, setFrame] = useState<ReturnType<typeof Frame> | null>(null)
 
   useEffect(() => {
     let mounted = true
@@ -63,7 +63,7 @@ export default function Home() {
         console.log('Starting app initialization...')
         
         // Initialize Frame SDK
-        const frameInstance = createFrame()
+        const frameInstance = Frame()
         await frameInstance.ready()
         setFrame(frameInstance)
 
